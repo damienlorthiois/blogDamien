@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>BlogDamien</title>
+	</head>
+
+	<body>
+		<h1>Super Blog</h1>
+		<?php foreach ($post5 as $post) : ?>
+			<h2><a href="post.php?id=<?= $post['id'] ?>"><?= $post['title'] ?></a></h2>
+			<p> 
+				<?= $post['date'].' - '.$post['content'] ?>
+			</p>
+		<?php endforeach ?>
+
+		
+	</body>
+
+</html>
