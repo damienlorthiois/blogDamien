@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>BlogDamien - <?= $post['title'] ?></title>
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="css/normalize.css">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<h1>TITRE</h1>
+				<nav>
+					<ul>
+						<li><a href="index.php">Accueil</a></li><!-- 
+						 --><li><a href="login.php">Connexion</a></li>
+					</ul>
+				</nav>
+			</header>
+			<section>
+				<h2>Article <?= $post['title']?></h2>
+				<p><?= $post['date'].' - '.$post['content'] ?></p>
+				<?php foreach ($comments as $comment) : ?>
+					<p><?= "Commentaire n° ".$comment['id'] ?></p>
+					<p><?= "Content : ".$comment['content'] ?></p>
+				<?php endforeach ?>
+			</section>
+		</div>
+	</body>
+</html>

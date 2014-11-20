@@ -1,0 +1,100 @@
+*{
+  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+}
+
+
+/*STRUCTURE*/
+body{
+  background: url(theme/bg.jpg)no-repeat center fixed;
+  background-size: cover !important;
+  font-size: 12px;
+}
+.wrapper{
+  margin: 0 auto;
+  width: 700px;
+}
+
+
+/* HEADER */
+header h1{
+  text-align: center;
+  font-size: 3em;
+  margin-top: 30px;
+}
+header nav{
+  border-top: 2px solid black;
+  padding: 5px;
+}
+header ul{
+  padding: 0;
+}
+header ul li{
+  text-align: center;
+  width: 50%;
+  display: inline-block;
+  vertical-align: middle;
+}
+header ul li a{
+  font-size: 1.8em;
+  color: black;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 4px;
+}
+header ul li a:hover, header ul li a:active{
+  background-color: rgba(255,255,255,0.7);
+}
+
+
+/* SECTION */
+section{
+  margin-top: 0px;
+  background-color: rgba(255,255,255,0.7);
+  padding: 20px;
+  word-wrap: break-word;
+}
+
+
+/* ARTICLE */ 
+article{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 2px dotted black;
+}
+article:last-child{
+  border-bottom: none;
+}
+article h2>a{
+  text-decoration: none;
+}
+
+
+/* FORM */
+.form{
+  margin: 0 auto;
+  width: 50%;
+}
+.form>form>div{
+  vertical-align: middle;
+  line-height: 20px;
+  margin: 5px;
+}
+.form label{
+  float: left;
+  width: 36%;
+}
+.form input{
+  float: left;
+  width: 50%;
+}
+.form button{
+  display: block;
+  margin: 15px auto;
+}
+
+
+
+
+

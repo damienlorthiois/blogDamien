@@ -1,8 +1,5 @@
 <?php
-
-
 spl_autoload_register("my_autoload");
-
 function my_autoload($class)
 {
 	$filepath = $class.".Class.php";
@@ -10,15 +7,17 @@ function my_autoload($class)
 	require_once($filepath);
 }
 
-// AFFICHER LES PREMIERS POST
+session_start();
 
-$posts = new Model_Post();
-$post = $posts->getPost(5);
-$post5 = $posts->getLatestPost();
-var_dump($post);
+// POSTS
+$posts = new Model_Post(); // Nouvel objet de la classe Model_Post()
+$post = $posts->getPost(2); // AFFICHER UN POST AVE L'ID 2
+$post5 = $posts->getLatestPost(); // AFFICHER LES 5 DERNIERS ARTICLES
 
+//COMMENTS
+$comments = new Model_Comment(); // Nouvel objet de la classe Model_Comment()
 
-include "blog.phtml";
+include "View/blog.phtml";
 
 
 

@@ -43,7 +43,7 @@ class Helper_Database
 		$query = $this->db->prepare($queryString);
 		// execute
 		$query->execute($data);
-		return $this->db>lastInsertId();
+		return $this->db->lastInsertId();
 	}
 
 }

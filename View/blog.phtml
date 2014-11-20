@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>BlogDamien</title>
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="css/normalize.css">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<h1>TITRE</h1>
+				<nav>
+					<ul>
+						<li><a href="#">Accueil</a></li><!-- 
+						 --><li><a href="login.php">Connexion</a></li>
+					</ul>
+				</nav>
+			</header>
+			<section>
+				<?php if(isset($_SESSION['name']))
+					{
+						echo "<h2>Bonjour ".$_SESSION['name']."</h2>";
+					}
+				?>
+				<?php foreach ($post5 as $post) : ?>
+					<article>
+						<h2><a href="post.php?id=<?= $post['id'] ?>"><?= $post['title'] ?></a></h2>
+						<p><?= $post['date'].' - '.$post['content'] ?></p>
+						<p><?php echo "il y a ".$comments->getNumberComment($post['id'])." commentaire pour le post ". $post['id'] ?></p>
+					</article>
+				<?php endforeach ?>	
+			</section>
+		</div>
+	</body>
+</html>

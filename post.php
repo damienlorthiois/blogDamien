@@ -1,8 +1,6 @@
 <?php
 
-
 spl_autoload_register("my_autoload");
-
 function my_autoload($class)
 {
 	$filepath = $class.".Class.php";
@@ -11,13 +9,17 @@ function my_autoload($class)
 }
 
 $posts = new Model_Post();
-if (isset($_GET['id'])) {
-	$post=$posts->getPost($_GET['id']);
-	include "article.phtml";
-}
-else
+$commentsManager = new Model_Comment();
+
+if (isset($_GET['id'])) 
 {
-	echo "404";
+	$post = $posts->getPost($_GET['id']);
+	$comments = $commentsManager->getComment($_GET['id']);
+	include "View/comment.phtml";
 }
+else echo "404";
+
+
+
 
 
