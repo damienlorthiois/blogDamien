@@ -10,40 +10,52 @@ body{
   background: url(theme/bg.jpg)no-repeat center fixed;
   background-size: cover !important;
   font-size: 12px;
+  margin: 30px;
 }
 .wrapper{
   margin: 0 auto;
   width: 700px;
 }
+header{
 
+  color: white;
+}
 
 /* HEADER */
 header h1{
+  background-color: rgba(0,0,0,0.7);
   text-align: center;
   font-size: 3em;
-  margin-top: 30px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 0;
 }
 header nav{
-  border-top: 2px solid black;
-  padding: 5px;
+  border-top: 2px solid silver;
+  padding: 0px;
+  margin: 0;
 }
 header ul{
   padding: 0;
+  margin: 0;
 }
 header ul li{
   text-align: center;
-  width: 50%;
+  width: 33.33%;
   display: inline-block;
   vertical-align: middle;
 }
 header ul li a{
+  background-color: rgba(0,0,0,0.7);
   font-size: 1.8em;
-  color: black;
+  display: block;
+  color: white;
   text-decoration: none;
-  padding: 8px;
-  border-radius: 4px;
+  padding: 10px;
+  width: 100%;
 }
 header ul li a:hover, header ul li a:active{
+  color: black;
   background-color: rgba(255,255,255,0.7);
 }
 
@@ -52,8 +64,17 @@ header ul li a:hover, header ul li a:active{
 section{
   margin-top: 0px;
   background-color: rgba(255,255,255,0.7);
-  padding: 20px;
+  padding: 20px 20px 30px 20px;
   word-wrap: break-word;
+}
+h2{
+  color: black;
+  font-size: 2em;
+  text-transform: capitalize;
+}
+h3{
+  color: #4A5B66;
+  margin-top: 40px;
 }
 
 
@@ -63,38 +84,149 @@ article{
   padding-bottom: 30px;
   border-bottom: 2px dotted black;
 }
-article:last-child{
-  border-bottom: none;
+article:nth-of-type(1){
+    border-top: 2px dotted black;
 }
+/*article:last-child{
+  border-bottom: none;
+}*/
 article h2>a{
+  color: #4A5B66;
   text-decoration: none;
 }
+img{
+  width: 100%;
+}
 
 
-/* FORM */
-.form{
+/* FORM LOGIN & CONNECTION*/
+.formuser{
   margin: 0 auto;
   width: 50%;
 }
-.form>form>div{
+.formuser>form>div{
   vertical-align: middle;
   line-height: 20px;
   margin: 5px;
 }
-.form label{
+.formuser label{
   float: left;
   width: 36%;
 }
-.form input{
+.formuser input{
   float: left;
   width: 50%;
 }
-.form button{
+.formuser button{
+  display: block;
+  margin: 15px auto;
+}
+.formuser p{
+/*  padding-left: 10px;*/
+  margin: 0 0 10px 5px;
+  font-size: 0.75em;
+}
+.formuser p span{
+  color: red;
+}
+
+
+
+/* FORM ARTICLE */
+.formpost{
+  margin: 0 auto;
+  width: 50%;
+}
+.formpost>form>div{
+  vertical-align: middle;
+  line-height: 20px;
+  margin-bottom: 5px;
+}
+.formpost label{
+  float: left;
+  width: 20%;
+}
+.formpost input{
+  float: left;
+  width: 80%;
+}
+.formpost textarea{
+  resize : vertical;
+  height: 100px;
+  width: 100%;
+}
+.formpost button{
+  display: block;
+  margin: 15px auto;
+}
+.formpost input.upload{
+  margin: 5px 0 5px 0 ;
+  float: none;
+  display: block;
+  width: 80%;
+}
+
+
+
+/* FORM COMMENT */
+.formcomment{
+  width: 50%;
+}
+.formcomment textarea{
+  resize : vertical;
+  height: 100px;
+  width: 100%;
+}
+.formcomment button{
   display: block;
   margin: 15px auto;
 }
 
+/* FORM LOGOUT */
+.formlogout{
+  margin: 0 auto;
+  text-align: center;
+  width: 50%;
+}
+.formlogout label, .formlogout button{
+  display: inline-block;
+}
+.formlogout label{
+  margin-right: 10px;
+}
+.formlogout button{
+  margin-right: 5px;
+}
 
 
 
+
+/* FOOTER */
+footer{
+  padding: 5px;
+  background-color: rgba(0,0,0,0.7);
+}
+footer nav{
+  padding: 0;
+  margin: 0;
+}
+footer ul{
+  padding: 0;
+  text-align: center;
+}
+footer ul li{
+  display: inline-block;
+
+}
+footer ul li:first-child{
+  padding-right: 30px;
+}
+footer ul li:last-child{
+  padding-left: 30px;
+}
+footer a{
+  font-size: 1.5em;
+  color: white;
+  text-decoration: none;
+}
 

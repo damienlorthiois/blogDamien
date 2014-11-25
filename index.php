@@ -9,15 +9,25 @@ function my_autoload($class)
 
 session_start();
 
+// Recupération du numéro de page en GET
+if(isset($_GET['page']))
+	$page=$_GET['page'];
+else
+	$page=1;
+
 // POSTS
 $posts = new Model_Post(); // Nouvel objet de la classe Model_Post()
-$post = $posts->getPost(2); // AFFICHER UN POST AVE L'ID 2
-$post5 = $posts->getLatestPost(); // AFFICHER LES 5 DERNIERS ARTICLES
+$offset = ($page-1)*5;
+$postMax = $posts->getMaxPost();
+$pageMax= ceil($postMax/5);
+$post5 = $posts->getLatestPost(5, $offset); // AFFICHER LES 5 DERNIERS ARTICLES
+// var_dump($post5);
 
 //COMMENTS
 $comments = new Model_Comment(); // Nouvel objet de la classe Model_Comment()
 
-include "View/blog.phtml";
 
+
+include "View/index.phtml";
 
 

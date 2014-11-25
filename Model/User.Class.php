@@ -8,17 +8,20 @@ class Model_User
 	{
 		$this->db = new Helper_Database();
 	}
-
 	public function validMember($name, $password)
 	{
 		return $this->db->queryOne("select * from user WHERE name = ? and password = ?", array($name, sha1($password)));
 	}
-
-	public function creatNewMember($name, $mail, $password)
+	public function createNewMember($name, $mail, $password)
 	{
 		return $this->db->execute(
 			"insert into user (name, mail, password)
-				values (?,?,?);", array($name, $mail, sha1($password)));
+			values (?,?,?);", array($name, $mail, sha1($password)));
+	}
+	public function verificationMember($name)
+	{
+		$result = $this->db->queryOne("select * from user WHERE name = ?", array($name));
+		return $result;
 	}
 }
 

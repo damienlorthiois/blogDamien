@@ -17,6 +17,7 @@ if (isset($_POST['name']) &&isset($_POST['password']))
 	{
 		$_SESSION['name']= $user['name'];
 		$_SESSION['id']= $user['id'];
+ 		$_SESSION['admin']= $user['admin'];
 		header("Location: index.php");
 	}
 }

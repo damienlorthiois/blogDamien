@@ -1,25 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>BlogDamien</title>
-		<link rel="stylesheet" href="css/styles.css">
-		<link rel="stylesheet" href="css/normalize.css">
-	</head>
-	<body>
-		<div class="wrapper">
-			<header>
-				<h1>TITRE</h1>
-				<nav>
-					<ul>
-						<li><a href="index.php">Accueil</a></li><!-- 
-						 --><li><a href="#">Connexion</a></li>
-					</ul>
-				</nav>
-			</header>
+<?php include 'menu.phtml' ?>
+
 			<section>
 				<h2>Espace Membre</h2>
-				<div class="form">
+				<div class="formuser">
 					<form action="" method="post">
 						<div class="clearfix">
 							<label for="name">Nom</label><!-- 
@@ -34,6 +17,5 @@
 				</div>
 				<a href="inscription.php">Pas encore inscrit ?</a>
 			</section>
-		</div>
-	</body>
-</html>
+			
+<?php include 'footer.phtml' ?>

@@ -1,30 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>BlogDamien - <?= $post['title'] ?></title>
-		<link rel="stylesheet" href="css/styles.css">
-		<link rel="stylesheet" href="css/normalize.css">
-	</head>
-	<body>
-		<div class="wrapper">
-			<header>
-				<h1>TITRE</h1>
-				<nav>
-					<ul>
-						<li><a href="index.php">Accueil</a></li><!-- 
-						 --><li><a href="login.php">Connexion</a></li>
-					</ul>
-				</nav>
-			</header>
+<?php include 'menu.phtml' ?>
+
 			<section>
-				<h2>Article <?= $post['title']?></h2>
+				<h2>- Article : <?= $post['title']?> -</h2>
 				<p><?= $post['date'].' - '.$post['content'] ?></p>
-				<?php foreach ($comments as $comment) : ?>
-					<p><?= "Commentaire n° ".$comment['id'] ?></p>
-					<p><?= "Content : ".$comment['content'] ?></p>
+				<?php if($post['image']!=false) : ?>
+					<img src="picture/<?= $post['image'] ?>" alt="photo<?= $post['image']?>">
+				<?php endif ?>
+				<?php if($nbComment>=1) : ?>
+					<h3>Commentaires</h3>
+				<?php endif ?>
+				<?php foreach ($comments as $number => $comment) : ?>
+					<p>
+						<?= htmlentities($comment['name'])." : ".htmlentities($comment['content']) ?>
+					</p>
+					<?php if(isset($_SESSION['name']) && $_SESSION['admin']==1) : ?>
+					<form action="erasecomment.php?id=<?= $comment['id'] ?>" method="post">
+						<button type="submit" onclick="return confirm('etes vous sur ?')">Surpprimer</button>
+					</form>
+					<?php endif ?>
 				<?php endforeach ?>
+				<h3>Ajouter un commentaire</h3>
+
+				<?php if(isset($_SESSION['name'])) : ?>
+					<div class="formcomment">
+						<form action="" method="post">
+							<textarea name="commentContent" id="commentContent" cols="50" rows="10" placeholder="contenu..."></textarea>
+							<button type="submit">Envoyer</button>
+						</form>
+					</div>
+				<?php else : ?>
+					<a href="login.php">Vous devez vous connecter !</a>
+				<?php endif ?>
+
+				
 			</section>
-		</div>
-	</body>
-</html>
+
+<?php include 'footer.phtml' ?>

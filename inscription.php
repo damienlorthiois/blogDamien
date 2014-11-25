@@ -9,18 +9,30 @@ function my_autoload($class)
 
 session_start();
 $users = new Model_User();
+$takenUser=false;
 
-if (isset($_POST['name']) && isset($_POST['mail']) && isset($_POST['password'])) 
+if (isset($_POST['name']) ) 
 {
-	$newUser = $users->creatNewMember($_POST['name'],$_POST['mail'], $_POST['password']);
-
-	if($newUser)
+	if ($users->verificationMember($_POST['name'])!=false) 
 	{
- 		$_SESSION['name']= $_POST['name'];
- 		$_SESSION['id']= $newUser;
-		header("Location: index.php");
+		$takenUser=true;
+	}
+
+	else if (strlen($_POST['name'])>=6 && isset($_POST['mail']) && filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL) && isset($_POST['password']) && strlen($_POST['password'])>=6) 
+	{
+		$takenUser=false;
+		$newUser = $users->createNewMember($_POST['name'],$_POST['mail'], $_POST['password']);
+		if($newUser)
+		{
+	 		$_SESSION['name']= $_POST['name'];
+	 		$_SESSION['id']= $newUser;
+	 		$_SESSION['admin']= 0;
+			header("Location: index.php");
+		}
 	}
 }
+
+
 
 include "View/inscription.phtml";
 
