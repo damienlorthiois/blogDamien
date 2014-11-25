@@ -10,7 +10,7 @@ body{
   background: url(theme/bg.jpg)no-repeat center fixed;
   background-size: cover !important;
   font-size: 12px;
-  margin: 30px;
+  margin: 20px;
 }
 .wrapper{
   margin: 0 auto;
@@ -22,13 +22,35 @@ header{
 }
 
 /* HEADER */
+header>div{
+    background-color: rgba(0,0,0,0.7);
+}
+header>div>div:first-child>p{
+  padding: 5px 0 0 5px;
+  margin: 0px;
+}
+header>div>div:first-child{
+  float: left;
+}
+header>div>div:last-child{
+  float: right;
+    margin: 5px 5px 0 0 ;
+}
+header>div>div:last-child input{
+  color: black;
+  padding-left:5px;
+}
+header>div>div:last-child button{
+  color: black;
+}
+
 header h1{
   background-color: rgba(0,0,0,0.7);
   text-align: center;
   font-size: 3em;
-  padding: 20px;
-  margin-top: 20px;
+  padding: 30px;
   margin-bottom: 0;
+  margin-top: 0px;
 }
 header nav{
   border-top: 2px solid silver;
@@ -80,16 +102,13 @@ h3{
 
 /* ARTICLE */ 
 article{
-  padding-top: 30px;
+  padding-top: 0px;
   padding-bottom: 30px;
   border-bottom: 2px dotted black;
 }
-article:nth-of-type(1){
-    border-top: 2px dotted black;
-}
-/*article:last-child{
+article:last-child{
   border-bottom: none;
-}*/
+}
 article h2>a{
   color: #4A5B66;
   text-decoration: none;
@@ -97,6 +116,13 @@ article h2>a{
 img{
   width: 100%;
 }
+
+
+/* TAGS */ 
+.tag p{
+  display: inline-block;
+}
+
 
 
 /* FORM LOGIN & CONNECTION*/
@@ -152,7 +178,7 @@ img{
 }
 .formpost textarea{
   resize : vertical;
-  height: 100px;
+  height: 150px;
   width: 100%;
 }
 .formpost button{
@@ -164,6 +190,26 @@ img{
   float: none;
   display: block;
   width: 80%;
+}
+.formpost .addpicture{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.formpost .addpicture p{
+  width: 100%;
+  margin: 0;
+}
+.formpost .addpicture img{
+  display: block;
+  width: 20%;
+  margin: 0;
+  margin-left: 20px;
+}
+.formpost .addpicture input{
+  float: none;
+  display: inline-block;
+  width: 5%;
+  vertical-align: middle;
 }
 
 
@@ -198,7 +244,17 @@ img{
   margin-right: 5px;
 }
 
+/* FORM EDIT */
+.formedit, .formerase{
+  display: inline-block;
+}
+/*.formedit textarea{
+  resize : vertical;
+  height: 100px;
+  width: 100%;
+}
 
+*/
 
 
 /* FOOTER */

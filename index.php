@@ -21,11 +21,12 @@ $offset = ($page-1)*5;
 $postMax = $posts->getMaxPost();
 $pageMax= ceil($postMax/5);
 $post5 = $posts->getLatestPost(5, $offset); // AFFICHER LES 5 DERNIERS ARTICLES
-// var_dump($post5);
 
 //COMMENTS
 $comments = new Model_Comment(); // Nouvel objet de la classe Model_Comment()
 
+//TAGS
+$tagsManager = new Model_Tag();
 
 
 include "View/index.phtml";
