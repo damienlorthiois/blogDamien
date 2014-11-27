@@ -2,16 +2,25 @@
 
 			<section>
 				<h2>- Article : <?= $post['title']?> -</h2>
-				<p><?= $post['date'].' - '.$post['content'] ?></p>
+				<p><?= $post['date']?></p>
 				<?php if($post['image']!=false) : ?>
 					<img src="picture/<?= $post['image'] ?>" alt="photo<?= $post['image']?>">
 				<?php endif ?>
+				<p><?= $post['content'] ?></p>
+				<div class="tag">
+					<?php if($tagsNumber>0) : ?>
+						<p>Tags : </p>
+						<?php foreach ($tags as $tag) : ?>
+							<p><a href="tag.php?tag=<?= $tag['content'] ?>"><?= htmlentities($tag['content']) ?></a></p>
+						<?php endforeach ?>
+					<?php endif ?>
+				</div>
 				<?php if($nbComment>=1) : ?>
 					<h3>Commentaires</h3>
 				<?php endif ?>
 				<?php foreach ($comments as $number => $comment) : ?>
 					<p>
-						<?= htmlentities($comment['name'])." : ".htmlentities($comment['content']) ?>
+						<?= htmlentities($comment['name'])." : ".$comment['content'] ?>
 					</p>
 					<?php if(isset($_SESSION['name']) && $_SESSION['admin']==1) : ?>
 					<form action="erasecomment.php?id=<?= $comment['id'] ?>" method="post">

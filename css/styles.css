@@ -117,6 +117,11 @@ img{
   width: 100%;
 }
 
+/* Lien "lire la suite" */
+.content500 a{
+  text-decoration: none;
+}
+
 
 /* TAGS */ 
 .tag p{
@@ -181,10 +186,12 @@ img{
   height: 150px;
   width: 100%;
 }
-.formpost button{
+.formpost form>button{
   display: block;
   margin: 15px auto;
 }
+
+
 .formpost input.upload{
   margin: 5px 0 5px 0 ;
   float: none;
@@ -223,9 +230,9 @@ img{
   height: 100px;
   width: 100%;
 }
-.formcomment button{
+.formcomment form>button{
   display: block;
-  margin: 15px auto;
+  margin-top:15px;
 }
 
 /* FORM LOGOUT */
@@ -248,13 +255,13 @@ img{
 .formedit, .formerase{
   display: inline-block;
 }
-/*.formedit textarea{
+.formedit textarea{
   resize : vertical;
   height: 100px;
   width: 100%;
 }
 
-*/
+
 
 
 /* FOOTER */

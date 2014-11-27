@@ -9,6 +9,10 @@ function my_autoload($class)
 
 session_start();
 
+//Variable Tag pour montrer sur quelle page on est
+$tagPagePhp = false;
+$indexPagePhp = true;
+
 // Recupération du numéro de page en GET
 if(isset($_GET['page']))
 	$page=$_GET['page'];

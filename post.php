@@ -10,6 +10,7 @@ session_start();
 
 $posts = new Model_Post();
 $commentsManager = new Model_Comment();
+$tagsManager = new Model_Tag();
 $nbComment = $commentsManager->getNumberComment($_GET['id']) ;
 
 
@@ -17,6 +18,8 @@ $nbComment = $commentsManager->getNumberComment($_GET['id']) ;
 if (isset($_GET['id'])) 
 {
 	$post = $posts->getPost($_GET['id']);
+	$tagsNumber=$tagsManager->getNumberTag($_GET['id']);
+	$tags=$tagsManager->getTag($_GET['id']);
 	if (isset($_POST['commentContent'])) 
 	{
 		$newComment = $commentsManager->createComment($_GET['id'],$_SESSION['id'], $_POST['commentContent']);
